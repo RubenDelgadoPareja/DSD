@@ -1,0 +1,160 @@
+printf("-----------------------------------------------------\n");
+	printf("              Por favor escoge una opción: \n");
+	printf("                 1.- Suma \n");
+	printf("                 2.- Resta \n");
+	printf("                 3.- Multiplicacion \n");
+	printf("                 4.- Divison \n");
+	printf("                 5.- Modulo \n");
+	printf("                 6.- Potencia \n");
+	printf("                 7.- Logaritmo \n");
+	printf("-----------------------------------------------------\n");
+	scanf("%i",&calculadora_1_arg1.menu);
+	printf("Primer operando:\n");
+	scanf("%i",&calculadora_1_arg1.valor_1);
+	printf("Segundo operando\n");
+	scanf("%i",&calculadora_1_arg1.valor_2);
+
+    //DEBUG
+
+    printf("Resultado: %d:",*result_1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//////////////////////////PRODUCTO VECTORIAL/////////////////////////
+	printf("-----------------------------------------------------\n");
+	printf("              Por favor escoge una opción: \n");
+	printf("                 1.- Suma \n");
+	printf("                 2.- Resta \n");
+	printf("                 3.- Multiplicacion \n");
+	printf("                 4.- Divison \n");
+	printf("                 5.- Modulo \n");
+	printf("                 6.- Potencia \n");
+	printf("                 7.- Logaritmo \n");
+	printf("                 8.- Producto Escalar de dos vectores\n");
+	printf("-----------------------------------------------------\n");
+	scanf("%i",&calculadora_1_arg1.menu);
+	if ( calculadora_1_arg1.menu < 8 ){
+		double valor1, valor2;
+		printf("Primer operando:\n");
+		scanf("%i",valor1);
+		calculadora_1_arg1.valor_1 = valor1;
+		printf("Segundo operando\n");
+		scanf("%i",valor2);
+		calculadora_1_arg1.valor_2 = valor2;
+	}
+	else{
+		int tamanio;
+		printf("Introduzca el tamaño de los vectores\n");
+		scanf("%i",&tamanio);
+		calculadora_1_arg1.vector_1.t_vector_len = tamanio;
+		calculadora_1_arg1.vector_2.t_vector_len = tamanio;
+		calculadora_1_arg1.vector_1.t_vector_val = malloc(tamanio*sizeof(float));
+		calculadora_1_arg1.vector_2.t_vector_val = malloc(tamanio*sizeof(float));
+		printf("Introduzca los valores del primer vector\n");
+		for (int i = 0; i<tamanio; i++){
+			printf("Introduzca elementos vector1\n");
+			scanf("%f",&calculadora_1_arg1.vector_1.t_vector_val[i]);
+		}
+		printf("Introduzca los valores del segundo vector\n");
+		for (int i = 0; i<tamanio; i++){
+			printf("Introduzca elementos vector2\n");
+			scanf("%f",&calculadora_1_arg1.vector_2.t_vector_val[i]);
+		}
+	}
+
+
+
+
+
+
+	-------------------------------
+	printf("MOSTRAMOS RESULTADOS: \n");
+	if( calculadora_1_arg1.menu < 8 )
+		printf("Resultado: %d:",*result_1);
+	else if( calculadora_1_arg1.menu == 8){
+		printf("Resultado: %f:",*result_1);
+	}
+	else
+	{
+		printf("Resultado: ");
+		for (int i = 0; i<calculadora_1_arg1.vector_1.t_vector_len; i++){
+			printf("%f",calculadora_1_arg1.vector_1.t_vector_val[i]);
+		}
+	}
+
+
+
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+t_vector nulo = {0};
+	printf("-----------------------------------------------------\n");
+	printf("              Por favor escoge una opción: \n");
+	printf("                 1.- Suma \n");
+	printf("                 2.- Resta \n");
+	printf("                 3.- Multiplicacion \n");
+	printf("                 4.- Divison \n");
+	printf("                 5.- Modulo \n");
+	printf("                 6.- Potencia \n");
+	printf("                 7.- Logaritmo \n");
+	printf("                 8.- Producto Escalar de dos vectores\n");
+	printf("                 9.- Suma de vectores \n");
+	printf("-----------------------------------------------------\n");
+	scanf("%i",&calculadora_1_arg1.menu);
+	if ( calculadora_1_arg1.menu < 8 ){
+		printf("Primer operando:\n");
+		scanf("%le",&calculadora_1_arg1.valor_1);
+		printf("Segundo operando\n");
+		scanf("%le",&calculadora_1_arg1.valor_2);
+		calculadora_1_arg1.vector_1 = nulo;
+		calculadora_1_arg1.vector_2 = nulo;
+		calculadora_1_arg1.solucion = nulo;
+	}
+	else{
+		int tamanio;
+		calculadora_1_arg1.solucion = nulo;
+		printf("Introduzca el tamaño de los vectores\n");
+		scanf("%i",&tamanio);
+		calculadora_1_arg1.vector_1.t_vector_len = tamanio;
+		calculadora_1_arg1.vector_2.t_vector_len = tamanio;
+		calculadora_1_arg1.solucion.t_vector_len = tamanio;
+		calculadora_1_arg1.vector_1.t_vector_val = malloc(tamanio*sizeof(float));
+		calculadora_1_arg1.vector_2.t_vector_val = malloc(tamanio*sizeof(float));
+		calculadora_1_arg1.solucion.t_vector_val = malloc(tamanio*sizeof(float));
+		printf("Introduzca los valores del primer vector\n");
+		for (int i = 0; i<tamanio; i++){
+			printf("Introduzca elementos vector1\n");
+			scanf("%f",&calculadora_1_arg1.vector_1.t_vector_val[i]);
+		}
+		printf("Introduzca los valores del segundo vector\n");
+		for (int i = 0; i<tamanio; i++){
+			printf("Introduzca elementos vector2\n");
+			scanf("%f",&calculadora_1_arg1.vector_2.t_vector_val[i]);
+		}
+		calculadora_1_arg1.valor_1 = 0;
+		calculadora_1_arg1.valor_2 = 0;
+	}
+
+
+if( calculadora_1_arg1.menu < 9)
+		printf("Resultado: %f:",*result_1);
+	else
+	{
+		printf("Resultado: ");
+		for (int i = 0; i<calculadora_1_arg1.solucion.t_vector_len; i++){
+			printf("%f   ",calculadora_1_arg1.solucion.t_vector_val[i]);
+		}
+	}
